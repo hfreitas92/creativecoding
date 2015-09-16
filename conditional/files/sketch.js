@@ -1,50 +1,54 @@
-var x;
-var y;
-var easing;
-
 function setup() {
 	createCanvas(windowWidth, windowHeight);
+	rectMode(CENTER);
 	background(255);
-	easing = .025;
-	x = width/2;
-	y = height/2;
 }
 
 function draw() {
-	background(255);
+
 	var eX = (mouseX - x) * easing;
 	var eY = (mouseY - y) * easing;
 
 	x = x + eX;
 	y = y + eY;
+	ellipse(x, y, 20, 20);	
 
-	if (dist (x,y,mouseX, mouseY) <= 30) {
-		ellipse(200, 200, 250, 250);
- 	fill(50);
-  	ellipse(160, 175, 20, 30);
-  	ellipse(240, 175, 20, 30);
+}
+
+function keyPressed() {
+	
+	if (key == 'A'){
+		ellipse(600, 200, 250, 250);
+ 		fill(50);
+  		ellipse(660, 175, 20, 30);
+  		ellipse(640, 175, 20, 30);
  
-  
-  	stroke(50, 0, 0);
-  	noFill();
-  	arc(200, 200, 175, 175, 0, radians(180));
-
-
+ 		stroke(0, 0, 0);
+  		noFill();
+  		triangle(1000, 200, 175, 300, 225, 100);
+	
 	}
+	else if(key == 'B') {
+		triangle(200, 50, 175, 100, 225, 100);
+ 
+ 
+  triangle(175, 100, 150, 150, 200, 150);
+  triangle(225, 100, 200, 150, 250, 150);
+ 
 
+  triangle(150, 150, 125, 200, 175, 200);
+  triangle(200, 150, 175, 200, 225, 200);
+  triangle(250, 150, 225, 200, 275, 200);
+ 
+  triangle(125, 200, 100, 250, 150, 250);
+  triangle(175, 200, 150, 250, 200, 250);
+  triangle(225, 200, 200, 250, 250, 250);
+  triangle(275, 200, 250, 250, 300, 250);
+
+	
+	}
 	else {
-	ellipse(200, 200, 250, 250);
- 	fill(50);
-  	ellipse(160, 175, 20, 30);
-  	ellipse(240, 175, 20, 30);
- 
-  
-  	stroke(50, 0, 0);
-  	fill(51);
-  	arc(200, 200, 175, 175, 0, radians(180));
-
+		rect(600, 350, 50, 50);
 	}
-
-
 
 }
